@@ -8,12 +8,14 @@ import { SimpleForm } from './Components/02-useEfect/SimpleForm';
 import { FocusScreen } from './Components/04-useRef/FocusScreen';
 import { RealExampleRef } from './Components/04-useRef/RealExampleRef';
 import { LayoutEffect } from './Components/05-useLayoutEffect/LayoutEffect';
+import { Memorize } from './Components/06-memos/Memorize';
+import { MemoHook } from './Components/06-memos/MemoHook';
 // import { HooksApp } from './HooksApp';
 
 
 ReactDOM.render(
  
-    <LayoutEffect />,
+    <MemoHook />,
  
   document.getElementById('root')
 );

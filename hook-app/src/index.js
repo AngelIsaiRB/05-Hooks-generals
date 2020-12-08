@@ -6,12 +6,13 @@ import { FormWithCustomHook } from './Components/02-useEfect/FormWithcustomHook'
 import { MultipleCustomHooks } from './Components/02-useEfect/MultipleCustomHooks';
 import { SimpleForm } from './Components/02-useEfect/SimpleForm';
 import { FocusScreen } from './Components/04-useRef/FocusScreen';
+import { RealExampleRef } from './Components/04-useRef/RealExampleRef';
 // import { HooksApp } from './HooksApp';
 
 
 ReactDOM.render(
  
-    <FocusScreen />,
+    <RealExampleRef />,
  
   document.getElementById('root')
 );

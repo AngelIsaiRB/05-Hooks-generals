@@ -2,18 +2,32 @@ import React, { useReducer } from 'react';
 import "./styles.css";
 import { todoReducer } from './todoReducer';
 
+const initialState =[
+    {
+        id:new Date().getTime(),
+        desc: "aprende react",
+        done: false
+    }
+]
 export const TodoApp = () => {
 
-    const initialState =[
-        {
-            id:new Date().getTime(),
-            desc: "aprende react",
-            done: false
-        }
-    ]
     const [todos, dispatch] = useReducer(todoReducer, initialState);
 
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+        const newTodo={
+            id:new Date().getTime(),
+            desc: "nueva tarea",
+            done: false
+        };
 
+        const action = {
+            type:"add",
+            payload:newTodo
+        };
+        dispatch(action);
+
+    }
 
     return (
         <div>
@@ -40,7 +54,7 @@ export const TodoApp = () => {
                 <div className="col-5">
                     <h4>Agregar todo</h4>
                     <hr/>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input 
                             type="text"
                             name="description"
@@ -49,6 +63,7 @@ export const TodoApp = () => {
                             autoComplete="off"
                         />
                         <button
+                            type="submit"
                             className="btn btn-outline-primary mt-1 btn-block"
                         >
                             Agregar

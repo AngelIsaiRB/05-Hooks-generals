@@ -12,7 +12,7 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <NavBar/>
-
+                <div className="container">
                 <Switch>
                     <Route exact path="/about" component={AboutScreen}/>
                     <Route exact path="/login" component={LoginScreen}/>
@@ -22,6 +22,7 @@ export const AppRouter = () => {
                     <Redirect to="/"></Redirect>
 
                 </Switch>
+                </div>
             </div>
         </Router>
     )

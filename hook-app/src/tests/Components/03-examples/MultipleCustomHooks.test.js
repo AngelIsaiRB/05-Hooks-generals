@@ -9,14 +9,16 @@ jest.mock('../../../hooks/UseCouter');
 
 
 describe('test en multiple custom hooks', () => {
-    beforeEach( () =>  {
+  
 
-        UseCouter.mockReturnValue({
-            state:10,
-            increment:()=>{}
-        });
+   beforeEach(()=>{
+    UseCouter.mockReturnValue({
+        state: 10,
+        increment: () => {}
+    });
+   })
+    
 
-    })
 
     test('should de mostrarse correctamente', () => {
 
@@ -33,24 +35,22 @@ describe('test en multiple custom hooks', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    test('should de mostrar la informacion ', () => {
-       
-        
-          useFetch.mockReturnValue({
-                data:[{
-                    author:"isai",
-                    quote:"hola mundo"
+    test('should de mostrar la informacion ', () => {    
+        useFetch.mockReturnValue({
+            data:[{
+                    author:'isai',
+                    quote:'hola mundo'
                 }],
-                loading:true,
+                loading: false,
                 error:null
-            }); 
-        const wrapper = shallow(<MultipleCustomHooks/>);
-        
-        expect(wrapper.find(".alert").exists()).toBe(false);
+            });                        
+            const wrapper = shallow( <MultipleCustomHooks /> );    
+        expect( wrapper.find('.alert').exists() ).toBe( false );
         expect(wrapper.find(".mb-0").text().trim()).toBe("hola mundo");
         expect(wrapper.find("footer").text().trim()).toBe("isai");
 
     })
+    
     
     
 })

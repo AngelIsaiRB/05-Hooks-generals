@@ -3,7 +3,7 @@ import { UserContext } from './UserContext'
 
 export const LoginScreen = () => {
 
-    const {user, setUser} = useContext(UserContext);
+    const {setUser} = useContext(UserContext);
 
     return (
         <div>
